@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="trad.css">
+    <title>Traducteur</title>
+</head>
+<body>
+
+
+<div class="container">
+    <header>
+        <h1>Traducteur Anglais-Français</h1>
+    </header>
+
+    <form action="trad.php" method= 'POST'>
+
+        
+        <p><label>Mot</label> :<input  type="text" name="word" /></p>
+
+    <p>
+       <label for="">Sens de traduction :</label>
+
+            <select  name="direction" >
+            
+                <option value="fr">Anglais vers Français</option>
+                <option value="en">Français vers Anglais</option>
+           
+            </select>  
+   </p>
+
+
+            
+   <input  type="submit" value="Traduire" />
+
+
+       <?php if(array_key_exists('word', $_POST) == true) { ?>
+<p>La traduction de  <?= $word ?> en français est <?= $answer ?>.</p>
+<?php } ?>
+
+    </form>
+
+  
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+
+* {
+	box-sizing: border-box
+}
+
+body {
+    background-color: #F8FFF2;
+}
+
+.container {
+    max-width: 960px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #1F9E90;
+    padding-left: 50px;
+}
+
+p {
+    padding-left: 50px;
+}
+
+

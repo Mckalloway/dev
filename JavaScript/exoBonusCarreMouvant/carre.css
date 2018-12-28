@@ -1,0 +1,31 @@
+*
+{
+    box-sizing: border-box;
+}
+
+
+.container {
+
+}
+
+
+#square
+{
+  width:50px;
+  height:50px;
+  background-color:green;
+  position:relative
+}
+
+.right {
+    left: 20px;
+}
+.left {
+    right: 20px;
+}
+.top {
+    bottom: 20px;
+}
+.bottom {
+    top: 20px;
+}
