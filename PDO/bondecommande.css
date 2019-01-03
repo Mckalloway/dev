@@ -1,0 +1,96 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #F8FFF2;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #00948A;
+  text-align: left;
+}
+
+.tableau h2 {
+  color: black;
+  text-align: center;
+}
+
+.tableau table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableau table th {
+  color: #00948A;
+}
+
+.tableau table td {
+  width: 25%;
+  line-height: 1.5em;
+}
+
+.tableau table td a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.6;
+}
+
+.tableau table tbody tr:nth-child(odd) {
+  background-color: #BABFB5;
+}
+
+.tableau table tbody tr:nth-child(even) {
+  background-color: #DFE5DA;
+}
+
+.accueil {
+  text-decoration: none;
+  color: red;
+  text-align: left;
+}
+
+.client {
+  text-align: right;
+}
+
+.affiche h2 {
+  color: black;
+  text-align: center;
+}
+
+.affiche table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.affiche table th {
+  color: #00948A;
+}
+
+.affiche table td {
+  width: 25%;
+  line-height: 1.5em;
+}
+
+.affiche table tbody tr:nth-child(odd), .affiche table tfoot tr:nth-child(odd) {
+  background-color: #BABFB5;
+}
+
+.affiche table tbody tr:nth-child(even), .affiche table tfoot tr:nth-child(even) {
+  background-color: #DFE5DA;
+}
+
+.affiche table tfoot {
+  color: #00948A;
+  font-weight: bold;
+  text-align: right;
+}
+/*# sourceMappingURL=bondecommande.css.map */

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bondecommande.css">
+    <title>Bon de commande</title>
+</head>
+<body>
+
+    <div class="container">
+
+       <form method="GET" action="recherche.php">
+        <p>
+            
+            <input type="text" name="search" id="search" placeholder="Tapez votre recherche"  />
+            <input type="submit" value="Rechercher" />
+        </p>
+    </form>
+
+        <h2>Bons de commande</h2>
+
+
+
+
+
+        <div class="tableau">
+
+            <h2>Liste des commandes</h2>
+
+            <table>
+            <thead>
+                <tr>
+                    <th>Commande</th>
+                    <th>Date de la commande</th>
+                    <th>Date de livraison</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ( $order as $value ): ?>
+
+                <tr>
+
+                    <td>
+                       <a href="orderform.php?orderNumber=<?= $value['orderNumber'] ?>"><?= $value['orderNumber'] ?></a>
+                    </td>
+
+                    <td>
+                        <?= $value['orderDate'] ?>
+                    </td>
+
+                    <td>
+                        <?= $value['shippedDate'] ?>
+                    </td>
+
+                    <td>
+                        <?= $value['status'] ?>
+                    </td>
+
+                </tr>
+
+                <?php endforeach ?>
+
+            </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    
+</body>
+
+
+</html>

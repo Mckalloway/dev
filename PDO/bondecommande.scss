@@ -1,0 +1,111 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #F8FFF2;
+    
+}
+
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    
+}
+
+h2 {
+    color: #00948A;
+    text-align: left;
+}
+
+
+
+
+.tableau {
+    
+    h2 {
+        color: black;
+        text-align: center;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th {
+            color: #00948A;
+        }
+        td {
+            width: 25%;
+            line-height: 1.5em;
+            a {
+                text-decoration: none;
+                color: black;
+                opacity: 0.6;
+            }
+        }
+        tbody {
+            tr {
+               
+                &:nth-child(odd) {
+                    background-color: #BABFB5;
+                }
+                &:nth-child(even) {
+                   background-color: #DFE5DA;
+                }
+            
+        }
+        }
+    }
+
+}
+
+.accueil {
+    text-decoration: none;
+    color: red;
+    text-align: left;
+}
+
+.client {
+    text-align: right;
+}
+
+.affiche {
+    h2 {
+        color: black;
+        text-align: center;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        th {
+            color: #00948A;
+        }
+        td {
+            width: 25%;
+            line-height: 1.5em;
+        }
+        tbody, tfoot {
+            tr {
+               
+                &:nth-child(odd) {
+                    background-color: #BABFB5;
+                }
+                &:nth-child(even) {
+                   background-color: #DFE5DA;
+                }
+            
+            }
+        }
+        tfoot {
+            color:  #00948A;
+            font-weight: bold;
+            text-align: right;
+        }
+    }
+
+}
+
+
