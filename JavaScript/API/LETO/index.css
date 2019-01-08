@@ -1,0 +1,44 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.infos {
+  background-color: #E7E7E7;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.infos img {
+  float: left;
+  width: 22%;
+  margin-left: -20px;
+  padding-right: 30px;
+}
+
+.infos .detail #datesortie {
+  color: red;
+  font-size: 2em;
+}
+
+.infos .detail #datesortie span {
+  color: red;
+}
+
+.infos h3 {
+  color: red;
+  font-size: 1.4em;
+}
+
+#video {
+  padding-top: 30px;
+}
+
+#video iframe {
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */
