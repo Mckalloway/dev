@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<main>
+        
+        <!-- Chargement du template PHTML spécifié par le programme PHP --><h2><i class="fa fa-cogs"></i> Panneau d'administration</h2>
+
+<nav>
+    <a href="add_Post.php">Rédiger un nouvel article</a>
+</nav>
+
+<table class="yep">
+    <caption>Liste des articles</caption>
+    <thead>
+        <tr>
+            <th> Titre </th>
+            <th> Article </th>
+            <th> Auteur </th>
+            <th> Catégorie </th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+    <?php foreach ($articleInfo as $articleInfos): ?>
+    <tr>
+        
+        <td><strong> <a href="show_post.php?id=<?= $articleInfos['Id'] ?>"><?= $articleInfos['Title'] ?></a></strong> </td>
+        <td><?= htmlspecialchars($articleInfos['Contents']) ?> </td>
+        <td><?= htmlspecialchars($articleInfos['FirstName']), htmlspecialchars($articleInfos['LastName']) ?> </td>
+        <td><?= htmlspecialchars($articleInfos['Name']) ?> </td>
+        <td><a href="change_content.php?id=<?= htmlspecialchars($articleInfos['Id']) ?> "><i class="fa fa-pencil"></i></a></td>
+        <td><a href="remove.php?id=<?= htmlspecialchars($articleInfos['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+        
+    </tr>
+    <?php endforeach ?>
+
+    </tbody>
+</table> 
+
+
+</main>
+
+
+
+
+
+
+</body>
+</html>

@@ -18,11 +18,7 @@ function position(pos) {
             "X-API-Key": "nce8u3Rq5yNq0jL9FjpmxZ8jWCzv9xvw",
         },
     })
-    .done(displayShowTimes )
-      
-
-    
-    
+    .done(displayShowTimes)
     .fail(function(error) {
         console.log("HTTP Request Failed");
     })

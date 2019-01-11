@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<main>
+        <!-- Chargement du template PHTML spécifié par le programme PHP -->
+        <!-- Page d'ajout d'un article -->
+<h2><i class="fa fa-pencil"></i> Rédiger un nouvel article</h2>
+
+<!-- Formulaire de saisie d'un nouvel article -->
+<form class="generic-form" action="add_Post.php" method="post">
+    <fieldset>
+        <legend><i class="fa fa-sticky-note-o"></i> Nouvel article</legend>
+        <ul>
+            <li>
+                <label for="title">Titre :</label>
+                <input type="text" id="title" name="title">
+            </li>
+            <li>
+                <label class="textarea" for="contents">Article :</label>
+                <textarea id="contents" name="contents" rows="15"></textarea>
+            </li>
+            <li>
+                <label for="author">Auteur :</label>
+                <select id="author" name="author">
+                <?php foreach ( $nameAuthor as $nomAuteur ): ?>
+                    <option value="<?= htmlspecialchars($nomAuteur['Id'])?>"><?= htmlspecialchars($nomAuteur['FirstName']).' '.htmlspecialchars($nomAuteur['LastName']) ?></option>
+                <?php endforeach ?>
+                                    </select>
+            
+            </li>
+            <li>
+                <label for="category">Catégorie :</label>
+                <select id="category" name="category">
+                <?php foreach ( $categoryName as $categorie ): ?>
+                    <option value="<?= htmlspecialchars($categorie['Id']) ?>"><?= htmlspecialchars($categorie['Name']) ?></option>
+                <?php endforeach ?>
+                                            
+                                    </select>
+            </li>
+            <li>
+                <button class="button button-primary" type="submit">Enregistrer</button>
+                <a class="button button-cancel" href="index.php">Annuler</a>
+            </li>
+        </ul>
+    </fieldset>
+</form>    
+</main>
+
+
+
+
+
+</body>
+</html>

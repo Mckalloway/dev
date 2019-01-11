@@ -41,4 +41,17 @@ h1 {
 #video iframe {
   width: 100%;
 }
+
+.seance table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.seance table tr {
+  border: 1px solid black;
+}
+
+.seance table td {
+  border: 1px solid black;
+}
 /*# sourceMappingURL=index.css.map */
