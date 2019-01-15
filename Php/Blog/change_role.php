@@ -24,19 +24,19 @@ $id = $_GET['id'];
 if (empty($_POST) == false ) {
     var_dump($_POST);
 
-    $title = $_POST['title'];
-    $content = $_POST['contents'];
+    $role = $_POST['role'];
+    
 
     $query = $pdo->prepare
     (
-        'UPDATE Post
-        SET Title = ?, Contents = ? 
+        'UPDATE Users
+        SET role = ? 
         WHERE Id = ?'
     );
 
-    $query->execute([$title, $content, $id]);
+    $query->execute([$role, $id]);
 
-    header('Location: index.php');
+    header('Location: admin.php');
     exit();
 
 }
