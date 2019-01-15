@@ -3,31 +3,21 @@
 session_start();
 if ($_SESSION == true ) {
 
-
 include 'application/bdd_connexion.php';
-
-
 
 $id = $_GET['id'];
 
 
 $query = $pdo->prepare
 (
-	'SELECT Title, Contents, Id
-    FROM Post
+	'SELECT *
+    FROM Users
     WHERE Id = ? '
 );
 
 $query->execute([$id]);
 
 $change = $query->fetch(PDO::FETCH_ASSOC);
-
-
-
-
-
-
-
 
 $id = $_GET['id'];
 
@@ -51,23 +41,19 @@ if (empty($_POST) == false ) {
 
 }
 
+
+
 } else {
+
     header('Location: index.php');
     exit();
 }
 
 
-
-
-
-
-
-
-
-
-
-$template = 'change_content';
+$template = 'admin';
 
 include 'layout.phtml';
+
+
 
 ?>

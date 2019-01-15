@@ -17,7 +17,9 @@
     <a href="add_Post.php">Rédiger un nouvel article</a>
 </nav>
 
-<table class="yep">
+
+<div class="tableau" >
+<table>
     <caption>Liste des articles</caption>
     <thead>
         <tr>
@@ -25,7 +27,6 @@
             <th> Article </th>
             <th> Auteur </th>
             <th> Catégorie </th>
-            <th></th>
         </tr>
 
     </thead>
@@ -37,7 +38,7 @@
         <td><?= htmlspecialchars($articleInfos['Contents']) ?> </td>
         <td><?= htmlspecialchars($articleInfos['FirstName']), htmlspecialchars($articleInfos['LastName']) ?> </td>
         <td><?= htmlspecialchars($articleInfos['Name']) ?> </td>
-        <td><a href="change_content.php?id=<?= htmlspecialchars($articleInfos['Id']) ?> "><i class="fa fa-pencil"></i></a></td>
+        <td><a href="change_content.php?id=<?= htmlspecialchars($articleInfos['Id']) ?> "><i class="fas fa-pen"></i></a></td>
         <td><a href="remove.php?id=<?= htmlspecialchars($articleInfos['Id']) ?>"><i class="fa fa-remove"></i></a></td>
         
     </tr>
@@ -45,7 +46,120 @@
 
     </tbody>
 </table> 
+</div>
 
+<div class= tableau >
+
+<table>
+    <caption>Liste des utilisateurs</caption>
+        <thead>
+            <tr>
+                <th> id </th>
+                <th> Email </th>
+                <th> Nom </th>
+                <th> Prenom </th>
+                <th> Pseudo </th>
+                <th> Role </th>
+            </tr>
+
+        </thead>
+        <tbody>
+        <?php foreach ($userInfo as $userInfos): ?>
+        <tr>
+            
+            <td><?= ($userInfos['id']) ?></td>
+            <td><?= ($userInfos['email']) ?> </td>
+            <td><?= ($userInfos['lastName'])?> </td>
+            <td><?= ($userInfos['firstName']) ?></td>
+            <td><?= ($userInfos['pseudo']) ?></td>
+            <td>
+                <form action="admin.php" method="POST">
+                <select name="role" id="role">
+                    
+                    <option value="<?= ($userInfos['role']) ?>"><?= ($userInfos['role']) ?></option>
+
+                    <?php if ($userInfos['role'] == 'admin'):?> 
+                    <option value="user">User</option> 
+                    <?php endif ?>
+
+                    <?php if ($userInfos['role'] == 'user'):?> 
+                    <option value="admin">Admin</option> 
+                    <?php endif ?>
+
+                </select>
+                </form>
+                    
+            </td>
+            <td><a href=""><i class="fas fa-pen"></i></a></td>
+            
+        </tr>
+        <?php endforeach ?>
+
+    </tbody>
+</table> 
+</div>
+
+<div class="tableau">
+
+<table >
+    <caption>Liste des auteurs</caption>
+    <caption><a href="add_author.php"><i class="far fa-arrow-alt-circle-right"></i>ajouter un auteur</a></caption>
+
+        <thead>
+            <tr>
+                <th> id </th>
+                <th> Nom </th>
+                <th> Prénom </th>
+            </tr>
+
+        </thead>
+        <tbody>
+        <?php foreach ($authorInfo as $authorInfos): ?>
+        <tr>
+            
+            <td><?= htmlspecialchars($authorInfos['Id']) ?></td>
+            <td><?= htmlspecialchars($authorInfos['lastName'])?> </td>
+            <td><?= htmlspecialchars($authorInfos['firstName']) ?></td>
+            
+        <td><a href="remove_author.php?id=<?= htmlspecialchars($authorInfos['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+        
+        </tr>
+        <?php endforeach ?>
+        
+
+    </tbody>
+</table> 
+</div>
+
+
+<div class="tableau">
+
+<table>
+    
+    <caption>Liste des catégories</caption>
+    <caption><a href="add_category.php"><i class="far fa-arrow-alt-circle-right"></i>ajouter une catégorie</a></caption>
+        <thead>
+            <tr>
+                <th> id </th>
+                <th> Nom </th>
+            </tr>
+
+        </thead>
+        <tbody>
+        <?php foreach ($categoryInfo as $categoryInfos): ?>
+        <tr>
+            
+            <td><?= htmlspecialchars($categoryInfos['Id']) ?></td>
+            <td><?= htmlspecialchars($categoryInfos['Name'])?> </td>
+            
+        <td><a href="remove_category.php?id=<?= htmlspecialchars($categoryInfos['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+            
+        </tr>
+        <?php endforeach ?>
+
+    </tbody>
+</table> 
+</div>
 
 </main>
 

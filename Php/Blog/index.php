@@ -1,10 +1,10 @@
 
 <?php
+
+session_start();
+var_dump($_SESSION);
+
 include 'application/bdd_connexion.php';
-
-
-
-
 
 
 $query = $pdo->prepare

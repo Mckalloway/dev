@@ -2,6 +2,9 @@
 
 
 
+session_start();
+if ($_SESSION == true ) {
+
 
 include 'application/bdd_connexion.php';
 
@@ -51,7 +54,11 @@ if (empty($_POST) == false ) {
 }
 
 
+} else {
 
+    header('Location: index.php');
+    exit();
+}
 
 $template = 'add_Post';
 

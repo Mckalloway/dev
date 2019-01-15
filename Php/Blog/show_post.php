@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+var_dump($_SESSION);
+
+
 
 if(array_key_exists('id', $_GET) == false || ctype_digit($_GET['id']) == false) {
     header('Location: index.php');
