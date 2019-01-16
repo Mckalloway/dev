@@ -1,18 +1,20 @@
 <?php
-
 session_start();
+include 'hash.php';
+if(empty($_POST) == false) {
+
+	var_dump($_POST);
+    
+    $hashPassword = hashPassword($_POST['password']);
 
 include 'application/bdd_connexion.php';
 
-if(empty($_POST) == false) {
-	
-    var_dump($_POST);
 
     $lastName = $_POST['lastName'];
     $firstName = $_POST['firstName'];
     $mail = $_POST['email'];
     $pseudo = $_POST['pseudo'];
-    $mdp = $_POST['password'];
+    
 
     
    
@@ -22,9 +24,15 @@ if(empty($_POST) == false) {
         VALUES (?, ?, ?, ?, ?, "user")'
 	);
 
-	$query->execute( [ $lastName, $firstName, $mail, $pseudo, $mdp ] );
+    $query->execute( [ $lastName, $firstName, $mail, $pseudo, $hashPassword ] );
+    
+
+    header('Location: index.php');
+    exit();
+
 
 }
+
 
 
 

@@ -3,6 +3,10 @@
 include 'application/bdd_connexion.php';
 
 session_start();
+include 'hash.php';
+
+$error = false;
+$message = '';
 
 
 if (!empty($_POST)) {
@@ -22,9 +26,12 @@ if (!empty($_POST)) {
 
     //var_dump($user);
 
-   
-        //var_dump($_POST);
-    if ( $user['password'] == $_POST['password'] ) {
+    if ($user == false) {
+    	
+        $error = true;
+		$message = "Votre adresse mail n'existe pas...";
+    
+    } else if ( verifyPassword($_POST['password'], $user['password']) == true ) {
         var_dump('Connecté');
         $_SESSION['email'] = $user['email'];
         $_SESSION['password'] = $user['password'];

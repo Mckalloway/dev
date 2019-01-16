@@ -1,59 +1,34 @@
 <?php
-
 session_start();
-if ($_SESSION == true ) {
-
 include 'application/bdd_connexion.php';
 
-$id = $_GET['id'];
+if (empty($_SESSION) == false ) {
+    
 
 
-$query = $pdo->prepare
-(
-	'SELECT *
-    FROM Users
-    WHERE Id = ? '
-);
+    
 
-$query->execute([$id]);
+    if (empty($_POST) == false ) {
+        var_dump($_POST);
 
-$change = $query->fetch(PDO::FETCH_ASSOC);
+        $role = $_POST['role'];
+        $id = $_POST['newrole'];
 
-$id = $_GET['id'];
-
-if (empty($_POST) == false ) {
-    var_dump($_POST);
-
-    $title = $_POST['title'];
-    $content = $_POST['contents'];
-
-    $query = $pdo->prepare
-    (
-        'UPDATE Post
-        SET Title = ?, Contents = ? 
-        WHERE Id = ?'
-    );
-
-    $query->execute([$title, $content, $id]);
-
-    header('Location: index.php');
+        
+        $query = $pdo->prepare
+        (
+            'UPDATE Users
+            SET role = ? 
+            WHERE Id = ?'
+        );
+        $query->execute([$role, $id]);
+        
+    }
+    header('Location: admin.php');
     exit();
-
-}
-
-
-
 } else {
-
     header('Location: index.php');
     exit();
 }
-
-
-$template = 'admin';
-
-include 'layout.phtml';
-
-
 
 ?>

@@ -48,6 +48,8 @@
 </table> 
 </div>
 
+<hr>
+
 <div class= tableau >
 
 <table>
@@ -72,25 +74,30 @@
             <td><?= ($userInfos['lastName'])?> </td>
             <td><?= ($userInfos['firstName']) ?></td>
             <td><?= ($userInfos['pseudo']) ?></td>
-            <td>
-                <form action="admin.php" method="POST">
-                <select name="role" id="role">
+            
+                <form action="change_role.php" method="POST">
+                <input type="hidden" name="newrole" value="<?= $userInfos['id'] ?>">
+                <td>    <select name="role" id="role">
                     
-                    <option value="<?= ($userInfos['role']) ?>"><?= ($userInfos['role']) ?></option>
+                        <option value="<?= $userInfos['role'] ?>"><?= $userInfos['role'] ?></option>
 
-                    <?php if ($userInfos['role'] == 'admin'):?> 
-                    <option value="user">User</option> 
-                    <?php endif ?>
+                        <?php if ($userInfos['role'] == 'admin'):?> 
+                        <option value="user">user</option> 
+                        <?php endif ?>
 
-                    <?php if ($userInfos['role'] == 'user'):?> 
-                    <option value="admin">Admin</option> 
-                    <?php endif ?>
+                        <?php if ($userInfos['role'] == 'user'):?> 
+                        <option value="admin">admin</option> 
+                        <?php endif ?>
 
-                </select>
-                </form>
+                    </select>
+                </td>
+                <td>
+                    <button><a href="change_role.php"><i class="fas fa-check"></i></a></button>
+                </td>
+                    </form>
                     
             </td>
-            <td><a href=""><i class="fas fa-pen"></i></a></td>
+            
             
         </tr>
         <?php endforeach ?>
@@ -98,6 +105,8 @@
     </tbody>
 </table> 
 </div>
+
+<hr>
 
 <div class="tableau">
 
@@ -131,6 +140,7 @@
 </table> 
 </div>
 
+<hr>
 
 <div class="tableau">
 

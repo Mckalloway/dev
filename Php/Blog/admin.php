@@ -5,7 +5,7 @@ if ($_SESSION == true ) {
 
 include 'application/bdd_connexion.php';
 
-$query = $pdo->prepare
+$query = $pdo->prepare 
 (
 	'SELECT Title, Contents, FirstName, LastName, Name, Post.Id
     FROM Author
