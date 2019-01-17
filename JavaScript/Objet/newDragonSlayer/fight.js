@@ -10,12 +10,7 @@ var Perso = function(name, pv, attaque, defense, pm) {
     this.pm = pm;
 }
 
-//prototype pour afficher les caracteristiques
-Perso.prototype.affichage = function() {
 
-	$('#affiche').append('<p> '+this.name+'  : '+this.pv+' PV,   Attaque :  '+ this.attaque +',  Defense  :   '+this.defense+'</p>');
-
-}
 
 //prototype pour attaquer
 Perso.prototype.attaquer = function(perso) {
@@ -24,7 +19,7 @@ Perso.prototype.attaquer = function(perso) {
 
 	if (degats < 10) {
 		
-		console.log(perso.name +'ne sent plus rien....' );
+		console.log(perso.name +' ne sent plus rien....' );
 		degats = 10
 	}
 	perso.pv -= degats
@@ -41,7 +36,7 @@ Perso.prototype.defendre = function() {
     console.log(this.name+' augmente sa defense de '+ ratio/2 + ' point ');
     this.defense += ratio/2;
 
-    console.log(this.name +'a une defense à :'+ this.defense);
+    console.log(this.name +' a une defense à :'+ this.defense);
 }
 
 
@@ -59,5 +54,7 @@ Perso.prototype.sort = function(perso) {
 	}
 
 }
+
+
 
 

@@ -1,8 +1,33 @@
 .container {
     max-width: 960px;
     margin: auto;
+    background-image: url(bg.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#image {
+    text-align: center;
+    margin: auto;
+}
+#commande {
+    text-align: center;
+    margin: auto;
 }
 
-#affiche {
-    
+.hide {
+    display: none;
+}
+#ken {
+    width: 21%;
+    margin-left: 110px;
+    padding-top: 60px;
+}
+#ryu {
+    width: 17%;
+    margin-right: 110px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
 }
