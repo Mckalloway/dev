@@ -1,0 +1,14 @@
+.container {
+    margin: auto;
+}
+h1 {
+    text-align: center;
+}
+canvas {
+    text-align: center;
+    background-color: white;
+}
+
+body {
+    background-color: red;
+}
