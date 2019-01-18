@@ -1,10 +1,10 @@
-var Slate = function(canvas)
+var Slate = function(pen, canvas)
 {
 	this.canvas = canvas;
     this.context = this.canvas.getContext('2d');
     this.currentLocation = null;
     this.isDrawing       = false;
-    this.pen             = new Pen();
+    this.pen             = pen;
 
     
     this.canvas.addEventListener('mousedown',  this.onMouseDown.bind(this));

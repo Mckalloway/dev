@@ -1,6 +1,6 @@
 var canvas = document.getElementById('slate');
 
-var slate = new Slate(canvas);
+var prog = new Program(canvas);
 
 
 //var program = new Program();
