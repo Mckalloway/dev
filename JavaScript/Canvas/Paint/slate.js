@@ -11,7 +11,21 @@ var Slate = function(pen, canvas)
     this.canvas.addEventListener('mousemove',  this.onMouseMove.bind(this));
     this.canvas.addEventListener('mouseup',    this.onMouseUp.bind(this));
     this.canvas.addEventListener('mouseleave', this.onMouseUp.bind(this));
+    var clear = document.getElementById("tool-clear-canvas");
+    clear.addEventListener('click', this.clearAll.bind(this));
 }
+
+
+Slate.prototype.clearAll = function(event)
+{
+
+    this.context.clearRect( 0, 0, canvas.width, canvas.height);
+}
+
+
+
+
+
 
 Slate.prototype.getMouseLocation = function(event)
 {
@@ -62,3 +76,15 @@ Slate.prototype.onMouseLeave = function(event) {
   
     this.isDrawing = false;
 }
+
+
+
+
+
+    
+
+   
+
+
+
+
