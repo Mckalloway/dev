@@ -1,0 +1,42 @@
+<main>
+        
+<h2> Mot de passe oublié</h2>
+
+
+<?php if ($test != '') { ?>
+
+<div>
+    <?php if ($test == 'yes') {?>
+    
+        <p>mail envoyé</p>
+        <a href="index.php">Retourner sur la home</a>
+        
+    <?php } else if ($test == 'no'){?>
+    
+        <p>email inconnu</p>
+    
+    <?php } ?>
+</div>
+
+<?php } ?>
+
+<form class="generic-form" action="forgot.php" method="post">
+    <fieldset>
+        <legend></i>Tapez votre adresse email</legend>
+        <ul>
+            
+            <li>
+                <label for="email">adresse mail :</label>
+                <input type="email" id="email" name="email">
+            </li>             
+        
+            <li>
+                <button class="button button-primary" type="submit">Envoyer</button>
+                <a class="button button-cancel" href="index.php">Annuler</a>
+            </li>
+        </ul>
+
+        
+    </fieldset>
+</form>    
+</main>

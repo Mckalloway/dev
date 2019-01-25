@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet Php</title>
+</head>
+<body>
+
+
+
+    <header>
+        <nav>
+            <ul> 
+
+            <?php if(array_key_exists('firstName', $_SESSION)): ?>
+                <li><a href="index.php"> Accueil</a></li>
+                
+                <li><a href="destroy.php"></i>Deconnexion</a></li>
+
+
+                <?php else : ?>
+
+                <li><a href="index.php"> Accueil</a></li>
+                <li><a href="register.php"> M'enregistrer </a></li>
+                <li><a href="login.php"> M'identifier </a></li> 
+
+                <?php endif ?>
+
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+        <?php include $template.'.phtml' ?>
+    </main>
+
+
+
+
+
+
+
+    
+</body>
+</html>
