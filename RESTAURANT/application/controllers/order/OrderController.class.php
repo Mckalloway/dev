@@ -10,6 +10,9 @@ class OrderController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+		if(array_key_exists('Address', $_SESSION) == false) {
+            $http->redirectTo('/user/login');
+        }
         $mealModel = new MealModel();
         $meals = $mealModel->listAll();
 

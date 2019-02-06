@@ -4,6 +4,7 @@ session_start();
 
 
 
+
 // Save the project root directory as a global constant.
 define('ROOT_PATH', __DIR__);
 

@@ -72,6 +72,7 @@ class UserModel {
         if ( $verify == true ){
 
             var_dump('Connecté');
+            $_SESSION['Id'] = $user['Id'];
             $_SESSION['Email'] = $user['Email'];
             $_SESSION['Password'] = $user['Password'];
             $_SESSION['FirstName'] = $user['FirstName'];

@@ -7,6 +7,7 @@ var RecapValidate = function() {
     this.loadLocalStorage();
     console.log(this.baskets);
     this.priceHT = 0;
+    this.tva = 1.2;
 }
 
 
@@ -28,13 +29,12 @@ RecapValidate.prototype.showRecap = function () {
         $('#recapOrder').append(tr);
     
         this.priceHT += this.baskets[i].basketNumber*this.baskets[i].basketSalePrice;
-        //var ttc = 1.2;
+        var order = JSON.stringify(this.baskets);
+        $('#totalOrder').val(order);
     }
         console.log(this.priceHT);
-        $('#prixht').html('<span>'+Math.round(this.priceHT)+'</span>');
-        $('#prixttc').html('<span>'+Math.round(this.priceHT*1.2)+'</span>')
-        
-    
+        $('#prixht').html('<span>'+this.priceHT.toFixed(2)+'</span>');
+        $('#prixttc').html('<span>'+(this.priceHT*this.tva).toFixed(2)+'</span>');       
 
 }
 
