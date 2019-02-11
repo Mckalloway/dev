@@ -46,24 +46,40 @@ class OrderModel {
                                     $order_Id
                                     
                                 ]);
-                                
+            return $order_Id;            
 
     }
 
 
 
 
-    /**/
-    /*$tax,
-                                    $totalTaxAmount,
-                                    */
+	public function findOrder($orderId) {
+        $database = new Database();
+
+        // Insertion de la commande dans la base de donées.
+        $order = $database->queryOne
+        (
+            'SELECT * FROM `Order` WHERE Id= ?',
+            [ $orderId ]
+        );
+
+        return $order;
+    }
 
 
 
+    public function updateStatus($orderId) {
+        $database = new Database();
 
-
-
-
+        // Insertion de la commande dans la base de donées.
+        $order = $database->queryOne
+        (
+            'UPDATE `Order` SET Status = "payed" WHERE Id =?',
+            [ $orderId ]
+        );
+        
+    }
+    
 
 
 

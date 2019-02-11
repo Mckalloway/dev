@@ -60,7 +60,9 @@ class PaymentController
 
        $orderModel ->updateOrder($totaleAmount,$tax,$totalTaxAmount,$orderId);
 
-
+       return [
+        'orderId'=>$orderId
+    ];
        
         
     }

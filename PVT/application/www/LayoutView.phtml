@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PVT Plomberie</title>
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+    
+
+    <!-- Feuilles de styles de l'application -->
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+    
+    
+
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <!-- JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+
+    <header>
+        
+        <div class="container">
+
+            <div class="logo">
+
+                <a><img src="" alt="">
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="">Accueil </a> </li>
+                    <li><a href="">Nos prestations</a> </li>
+                    <li><a href="">Qui sommes-nous ? </a></li>
+                    <li><a href="">Contact </a></li>
+                
+                </ul>
+            
+            </nav>
+
+        
+        </div>
+
+    </header>
+
+
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template'] ?>
+</main>
+
+<!-- Pied de page commun -->
+<footer>
+    <ul class="link-list">
+        <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
+        <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
+        <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
+    </ul>
+    <small>Réalisé avec <i class="fa fa-heart"></i>&nbsp; par les élèves de la 3W Academy</small>
+</footer>
+
+<!-- Code principal JavaScript de l'application -->
+<script src="<?= $wwwUrl ?>/js/main.js"></script>
+
+</body>
+</html>
