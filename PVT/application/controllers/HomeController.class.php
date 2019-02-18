@@ -10,6 +10,10 @@ class HomeController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+
+		 $data = new Database();
+		 $test = $data->query('SELECT * FROM posts');
+		 
     }
 
     public function httpPostMethod(Http $http, array $formFields)

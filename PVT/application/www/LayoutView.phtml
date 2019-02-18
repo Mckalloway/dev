@@ -1,74 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PVT Plomberie</title>
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+</head>
     
-
     <!-- Feuilles de styles de l'application -->
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 
+
     <!-- JavaScript de l'application -->
     <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
 </head>
-<body>
+<body class="bg-light">
+
 
     <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
-    <header>
-        
         <div class="container">
 
-            <div class="logo">
+            <a class="navbar-brand js-scroll-trigger" href="<?= $requestUrl ?>">PVT Plomberie</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+                
+            
+            <div class="collapse navbar-collapse" id="navbarResponsive">
 
-                <a><img src="" alt="">
+                <ul class="navbar-nav text-uppercase ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="<?= $requestUrl ?>#home">Accueil</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="<?= $requestUrl ?>#prestation">Nos prestations</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="<?= $requestUrl ?>#achievements">Exemple de réalisation</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="<?= $requestUrl ?>#about">A propos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="<?= $requestUrl ?>/contact">Contact</a>
+                    </li>
+
+                </ul>
 
             </div>
 
-            <nav>
-
-                <ul>
-
-                    <li><a href="">Accueil </a> </li>
-                    <li><a href="">Nos prestations</a> </li>
-                    <li><a href="">Qui sommes-nous ? </a></li>
-                    <li><a href="">Contact </a></li>
-                
-                </ul>
-            
-            </nav>
-
-        
         </div>
 
-    </header>
+    </nav>
+
+    <main>
+        <!-- Affichage du template lié à la vue -->
+        <?php include $this->viewData['template']; ?>
+    
+    </main> 
+
+
+    <footer>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <p class="copyright">© copyright 2019 PVT Plomberie | Mention légale</p>
+                    <small><a href="<?= $requestUrl ?>/admin">Admin</a></small>
+                    <?php if(array_key_exists('firstName', $_SESSION)): ?>
+                    <small><a href="<?= $requestUrl ?>/logout">| Déconnexion</a></small>
+                    <?php endif ?>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+  
+
+ 
 
 
 
-<main>
-    <!-- Affichage du template lié à la vue -->
-    <?php include $this->viewData['template'] ?>
-</main>
 
-<!-- Pied de page commun -->
-<footer>
-    <ul class="link-list">
-        <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
-        <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
-        <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
-    </ul>
-    <small>Réalisé avec <i class="fa fa-heart"></i>&nbsp; par les élèves de la 3W Academy</small>
-</footer>
 
 <!-- Code principal JavaScript de l'application -->
 <script src="<?= $wwwUrl ?>/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 </body>
 </html>
+
+
+
+
+

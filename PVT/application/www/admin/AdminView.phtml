@@ -1,0 +1,40 @@
+
+
+<div class="show">
+
+    <div class="container">
+        <h2>Liste des messages</h2>
+        <table class="table">
+
+            <thead>
+
+                <tr>
+                <th scope="col">Nom Prénom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Sujet</th>
+                <th scope="col">Message</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+            <?php foreach ($userInfo as $userInfos): ?>
+                <tr>
+                <td><?= ($userInfos['LastName']) ?> <?= ($userInfos['FirstName']) ?></td>
+                <td><?= ($userInfos['Email']) ?> </td>
+                <td><?= ($userInfos['Phone']) ?> </td>
+                <td><?= ($userInfos['Adresse'])?><?= ($userInfos['City'])?><?= ($userInfos['ZipCode'])?> </td>
+                <td><?= ($userInfos['Why']) ?></td>
+                <td><?= ($userInfos['Message']) ?></td>
+                <td><a href="<?= $requestUrl ?>/admin/remove?Id=<?= $userInfos['Id'] ?>"><i class="fa fa-remove"></a></i></td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

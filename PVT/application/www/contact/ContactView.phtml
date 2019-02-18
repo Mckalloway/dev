@@ -1,0 +1,78 @@
+
+
+<div class="container">
+	 <form action="<?= $requestUrl ?>/contact" method="POST" class="register-form"> 
+      <div class="row">      
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="LastName">Nom</label>
+               <input name="LastName" class="form-control" type="text" required>    
+           </div>            
+      </div>
+      <div class="row">      
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="FirstName">Prénom</label>
+               <input name="FirstName" class="form-control" type="text" required>    
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="Email">Email</label>
+               <input name="Email" class="form-control" type="email" required>             
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="Phone">Numéro de téléphone</label>
+               <input name="Phone" class="form-control" type="text" required>             
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="Adresse">Adresse</label>
+               <input name="Adresse" class="form-control" type="text" required>             
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="City">Ville</label>
+               <input name="City" class="form-control" type="text" required>             
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="ZipCode">Code Postal</label>
+               <input name="ZipCode" class="form-control" type="text">             
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="Why">Sujet</label>
+
+              <select class="form-control" id="Why" name="Why">
+
+                <option value="Devis">Devis</option>
+                <option value="Depannage" >Dépannage</option>
+                <option value="Entretien">Entretien</option>
+                <option value="Intallation">Installation</option>
+                <option value="Autre">Autre</option>
+
+              </select>             
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-12">
+           <label for="exampleFormControlTextarea1">Votre message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="Message" required></textarea>           
+           </div>            
+      </div>
+      <hr>
+      <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+           <button id='confirm' class="btn btn-default logbutton" type="submit" value="Envoyer">Envoyer</button>           
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+           <button href="<?= $requestUrl ?>" class="btn btn-default regbutton">Annuler</button>
+          </div>          
+      </div>    
+    </form>
+</div>
